@@ -34,12 +34,6 @@ export default function DecoyNewsScreen({ onBack }) {
           <span>{a.date}</span>
         </div>
 
-        {/* Lead image placeholder */}
-        <div className="w-full h-44 bg-gray-100 rounded-lg mb-1 flex items-center justify-center">
-          <span className="text-gray-300 text-xs">Photo: PTI</span>
-        </div>
-        <p className="text-[10px] text-gray-400 mb-5">A metro construction site in Bengaluru. (File photo)</p>
-
         {/* Body */}
         {a.body.map((para, i) => (
           <p key={i} className="text-sm text-gray-700 leading-relaxed mb-4 font-serif">
