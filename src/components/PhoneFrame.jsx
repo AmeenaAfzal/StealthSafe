@@ -1,10 +1,6 @@
 import React from 'react'
-import { QRCodeSVG } from 'qrcode.react'
 
 export default function PhoneFrame({ children }) {
-  // We use window.location.origin to get the current URL (e.g., https://your-app.vercel.app)
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : ''
-
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
 
@@ -37,28 +33,23 @@ export default function PhoneFrame({ children }) {
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gray-900/30 rounded-full pointer-events-none" />
       </div>
 
-      {/* Right side — QR Code section */}
+      {/* Right side — Instructions section */}
       <div className="hidden lg:flex flex-col items-start pl-14 max-w-[260px]">
-        <div className="bg-white rounded-2xl p-4 shadow-md mb-4">
-          {/* QR Code always renders with the current site URL */}
-          <QRCodeSVG value={siteUrl} size={120} level="M" fgColor="#111827" bgColor="#ffffff" />
-        </div>
-        
-        <p className="text-xs text-slate-500 font-medium mb-5">
-          Scan to demo on your phone
-        </p>
-
-        {/* Keyboard instructions */}
-        <div className="space-y-2">
-          {[
-            ['☀️ → ☁️', 'Open vault'],['☁️ → ☀️ → ☁️', 'Silent SOS'],
-            ['S → C', 'Keyboard unlock'],
-          ].map(([k, v]) => (
-            <div key={k} className="flex gap-2 text-xs">
-              <span className="font-mono text-slate-700 w-24 flex-shrink-0">{k}</span>
-              <span className="text-slate-400">{v}</span>
-            </div>
-          ))}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-slate-700 mb-2">Stealth Gestures</h3>
+          <div className="space-y-3">
+            {[['☀️ → ☁️', 'Open vault'],
+              ['☁️ → ☀️ → ☁️', 'Silent SOS'],
+              ['S → C', 'Desktop unlock'],
+            ].map(([k, v]) => (
+              <div key={k} className="flex gap-3 text-xs items-center">
+                <span className="font-mono bg-white px-2 py-1 rounded border border-slate-200 text-slate-700 w-28 text-center">
+                  {k}
+                </span>
+                <span className="text-slate-500">{v}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
