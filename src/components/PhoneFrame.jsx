@@ -5,7 +5,6 @@ export default function PhoneFrame({ children }) {
   const [siteUrl, setSiteUrl] = useState('')
 
   useEffect(() => {
-    // ── FIX 1: Use window.location.origin (e.g. https://stealthsafe.vercel.app)
     // href includes the path and is localhost in dev — origin is always the right root URL
     setSiteUrl(window.location.origin)
   }, [])
@@ -46,10 +45,6 @@ export default function PhoneFrame({ children }) {
         {/* ── FIX 3: Show helpful message when on localhost instead of broken QR */}
         {isLocal ? (
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-3 w-[152px]">
-            <p className="text-xs font-semibold text-amber-700 mb-1">⚠️ Dev mode</p>
-            <p className="text-[11px] text-amber-600 leading-relaxed">
-              Deploy to Vercel — your live URL will generate the QR automatically.
-            </p>
           </div>
         ) : (
           <div className="bg-white rounded-2xl p-4 shadow-md mb-3">
