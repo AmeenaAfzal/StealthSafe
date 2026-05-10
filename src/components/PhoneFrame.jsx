@@ -40,20 +40,8 @@ export default function PhoneFrame({ children }) {
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gray-900/30 rounded-full pointer-events-none" />
       </div>
 
-      {/* Right — QR */}
-      <div className="hidden lg:flex flex-col items-start pl-14 max-w-[260px]">
-        {/* ── FIX 3: Show helpful message when on localhost instead of broken QR */}
-        {isLocal ? (
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-3 w-[152px]">
-          </div>
-        ) : (
-          <div className="bg-white rounded-2xl p-4 shadow-md mb-3">
-            <QRCodeSVG value={siteUrl} size={120} level="M" fgColor="#111827" bgColor="#ffffff" />
-          </div>
-        )}
-        <p className="text-xs text-slate-500 font-medium mb-1">
-          {isLocal ? 'After deploy — scan to open on phone' : 'Scan to demo on your phone'}
-        </p>
+     <div>
+        
         <p className="text-[10px] text-slate-400 break-all">{siteUrl || '…'}</p>
 
         <div className="mt-5 space-y-2">
