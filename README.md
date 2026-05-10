@@ -44,7 +44,7 @@ Follow the prompts. Every `git push` to `main` after linking will auto-deploy.
 | Gesture | What it does |
 |---|---|
 | Tap ☀️ Sun → ☁️ Cloud (within 1.5s) | Opens the safety vault |
-| Tap ☁️ Cloud → ☀️ Sun → ☁️ Cloud (within 2.5s) | Silent SOS to trusted contact |
+| Tap ☁️ Cloud → ☀️ Sun | Silent SOS to trusted contact |
 | Type safeword in search bar + Enter | Triggers mapped action |
 | Keyboard S → C (desktop) | Opens vault |
 
